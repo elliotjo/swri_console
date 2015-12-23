@@ -38,7 +38,8 @@ qt4_wrap_ui(SRC_FILES
 
 # Add header files containing Q_OBJET declaration to this list.
 qt4_wrap_cpp(SRC_FILES
-  include/swri_console/bag_reader.h
+  include/swri_console/bag_source.h
+  include/swri_console/bag_source_backend.h
   include/swri_console/console_master.h
   include/swri_console/console_window.h
   include/swri_console/log_database.h
@@ -56,7 +57,8 @@ qt4_add_resources(RCC_SRCS
 
 # Add source files to this list.
 LIST(APPEND SRC_FILES  
-  src/bag_reader.cpp
+  src/bag_source.cpp
+  src/bag_source_backend.cpp
   src/console_master.cpp
   src/console_window.cpp
   src/log_database.cpp
@@ -66,6 +68,7 @@ LIST(APPEND SRC_FILES
   src/ros_source.cpp
   src/ros_source_backend.cpp
   src/settings_keys.cpp
+  src/register_meta_types.cpp
   )
 
 add_executable(swri_console 
@@ -76,6 +79,10 @@ target_link_libraries(swri_console
   ${QT_LIBRARIES}
   ${catkin_LIBRARIES}
   )
+set_target_properties(swri_console
+  PROPERTIES COMPILE_FLAGS "-std=c++0x")
+
+
 
 install(TARGETS swri_console
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

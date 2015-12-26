@@ -40,11 +40,10 @@ namespace swri_console
 {
 ConsoleMaster::ConsoleMaster()
   :
-  connected_(false),
-  window_font_(QFont("Ubuntu Mono", 9))
+  window_font_(QFont("Ubuntu Mono", 9)),
+  ros_source_(&db_),
+  connected_(false)
 {
-  QObject::connect(&ros_source_, SIGNAL(logReceived(const rosgraph_msgs::LogConstPtr& )),
-                   &db_, SLOT(queueMessage(const rosgraph_msgs::LogConstPtr&) ));
   ros_source_.start();
 }
 
@@ -55,7 +54,6 @@ ConsoleMaster::~ConsoleMaster()
 void ConsoleMaster::createNewWindow()
 {
   ConsoleWindow* win = new ConsoleWindow(&db_);
-  windows_.append(win);
 
   QSettings settings;
   window_font_ = settings.value(SettingsKeys::FONT, QFont("Ubuntu Mono", 9)).value<QFont>();

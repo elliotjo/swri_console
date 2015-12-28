@@ -47,6 +47,7 @@ qt4_wrap_cpp(SRC_FILES
   include/swri_console/node_list_model.h
   include/swri_console/ros_source.h
   include/swri_console/ros_source_backend.h
+  include/swri_console/session_list_model.h
   include/swri_console/session_list_widget.h
   include/swri_console/settings_keys.h
   )
@@ -69,6 +70,7 @@ LIST(APPEND SRC_FILES
   src/register_meta_types.cpp 
   src/ros_source.cpp
   src/ros_source_backend.cpp
+  src/session_list_model.cpp
   src/session_list_widget.cpp
   src/session.cpp
   src/settings_keys.cpp

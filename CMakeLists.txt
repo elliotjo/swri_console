@@ -96,6 +96,14 @@ target_link_libraries(swri_console
 set_target_properties(swri_console
   PROPERTIES COMPILE_FLAGS "-std=c++0x")
 
+add_executable(collect_rosout_bags src/collect_rosout_bags.cpp)
+target_link_libraries(collect_rosout_bags
+  ${QT_LIBRARIES}
+  ${catkin_LIBRARIES}
+  )
+set_target_properties(collect_rosout_bags
+  PROPERTIES COMPILE_FLAGS "-std=c++0x")
+
 
 
 install(TARGETS swri_console

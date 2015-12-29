@@ -43,6 +43,7 @@ qt4_wrap_cpp(SRC_FILES
   include/swri_console/console_master.h
   include/swri_console/console_window.h
   include/swri_console/log_database.h
+  include/swri_console/log_filter.h
   include/swri_console/log_list_model.h
   include/swri_console/log_list_widget.h
   include/swri_console/node_list_model.h
@@ -68,6 +69,7 @@ LIST(APPEND SRC_FILES
   src/console_window.cpp
   src/log.cpp
   src/log_database.cpp
+  src/log_filter.cpp
   src/log_list_model.cpp
   src/log_list_widget.cpp
   src/main.cpp

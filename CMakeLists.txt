@@ -40,6 +40,7 @@ qt4_wrap_ui(SRC_FILES
 qt4_wrap_cpp(SRC_FILES
   include/swri_console/bag_source.h
   include/swri_console/bag_source_backend.h
+  include/swri_console/color_widget.h
   include/swri_console/console_master.h
   include/swri_console/console_window.h
   include/swri_console/log_database.h
@@ -65,6 +66,7 @@ qt4_add_resources(RCC_SRCS
 LIST(APPEND SRC_FILES  
   src/bag_source.cpp
   src/bag_source_backend.cpp
+  src/color_widget.cpp
   src/console_master.cpp
   src/console_window.cpp
   src/log.cpp

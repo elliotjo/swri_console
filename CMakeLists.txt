@@ -47,6 +47,7 @@ qt4_wrap_cpp(SRC_FILES
   include/swri_console/log_filter.h
   include/swri_console/log_list_model.h
   include/swri_console/log_list_widget.h
+  include/swri_console/log_writer.h
   include/swri_console/node_list_model.h
   include/swri_console/node_list_widget.h
   include/swri_console/ros_source.h
@@ -74,6 +75,7 @@ LIST(APPEND SRC_FILES
   src/log_filter.cpp
   src/log_list_model.cpp
   src/log_list_widget.cpp
+  src/log_writer.cpp
   src/main.cpp
   src/node_list_model.cpp
   src/node_list_widget.cpp
@@ -97,7 +99,7 @@ target_link_libraries(swri_console
   ${catkin_LIBRARIES}
   )
 set_target_properties(swri_console
-  PROPERTIES COMPILE_FLAGS "-std=c++0x")
+  PROPERTIES COMPILE_FLAGS "-std=c++0x -Wall")
 
 add_executable(collect_rosout_bags src/collect_rosout_bags.cpp)
 target_link_libraries(collect_rosout_bags
@@ -105,7 +107,7 @@ target_link_libraries(collect_rosout_bags
   ${catkin_LIBRARIES}
   )
 set_target_properties(collect_rosout_bags
-  PROPERTIES COMPILE_FLAGS "-std=c++0x")
+  PROPERTIES COMPILE_FLAGS "-std=c++0x -Wall")
 
 
 
